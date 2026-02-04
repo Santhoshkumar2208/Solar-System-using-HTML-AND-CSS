@@ -1,0 +1,379 @@
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 150%;
+    height: 100%;
+    background: black;
+    color:white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.Solar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 83vh;
+}
+ul.Solar_System{
+    position: relative;
+    list-style: none;
+    transition: all 0.09s ease-in;
+    padding-left: 50%;
+
+}
+h1{
+    font-size: 150%;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: aqua;
+}
+ul.Solar_System li{
+    position: absolute;
+    border: 0.5px solid white;
+    top:50%;
+    left:50%;
+}
+ul.Solar_System li span{
+    text-indent: -9999px;
+    position: absolute;
+    top:50%;
+}
+ul.Solar_System li.active{
+    border-color: aqua;
+}
+ul.Solar_System li.Sun span{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        #FFF9C4 0%,   
+        #FFD700 30%,  
+        #FFA500 60%, 
+        #FF8C00 80%,  
+        #FF4500 100%);
+    box-shadow:
+        0 0 30px #FFD700,
+        0 0 60px #FFA500,
+        0 0 100px rgba(255, 165, 0, 0.5);
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index:10;
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Mercury{
+    width: 120px;
+    height:120px;
+    border-radius: 50%;
+    animation: orbitMercury 6s linear infinite;
+}
+ul.Solar_System li.Mercury span{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #E0E0E0 0%,
+        #B0B0B0 35%,
+        #8E8E8E 60%,
+        #4E4A45 100%);
+    box-shadow:
+        inset -2px -2px 4px rgba(0,0,0,0.4);
+    left:-5px;
+    z-index: 9;
+    transition: all 0.2s ease-in;
+    
+}
+ul.Solar_System li.Venus{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    animation: orbitVenus 10s linear infinite;
+}
+ul.Solar_System li.Venus span{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        #FFF1C1 0%,
+        #E6C58F 40%,
+        #C9A25D 70%,
+        #8E6E3B 100%);
+    box-shadow:
+        inset -2px -2px 4px rgba(0,0,0,0.3);
+    left:-8px;
+    z-index: 8;
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Earth{
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    animation: orbitEarth 15s linear infinite;
+}
+ul.Solar_System li.Earth span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #A7D7F9 0%,
+        #2A7FFF 35%,
+        #2E8B57 55%,
+        #0B3D91 100%);
+    box-shadow:
+        inset -2px -2px 4px rgba(0,0,0,0.4),
+        0 0 8px rgba(100,150,255,0.5);
+    left:-2px;
+    z-index: 7;
+    transform: translate(-50%,-50%);
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Earth span span{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #F5F5F5 0%,
+        #CFCFCF 60%,
+        #9E9E9E 100%);
+    box-shadow:
+        inset -1px -1px 2px rgba(0,0,0,0.4);
+    top: 6px;
+    left: 25px;
+    transform-origin: -15px 50%;
+    animation: orbitMoon 2s linear infinite;
+}
+ul.Solar_System li.Mars{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: orbitMars 25s linear infinite;
+}
+ul.Solar_System li.Mars span{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        #FFCCAA 0%,
+        #E27B58 45%,
+        #C1440E 75%,
+        #7A2E0E 100%);
+    box-shadow:
+        inset -2px -2px 4px rgba(0,0,0,0.4);
+    left:-10px;
+    z-index: 6;
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Jupiter{
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    animation: orbitJupiter 40s linear infinite;
+}
+ul.Solar_System li.Jupiter span{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #F7E7CE 0%,
+        #D2B48C 35%,
+        #C19A6B 55%,
+        #6E3B1F 100%);
+    box-shadow:
+        inset -3px -3px 6px rgba(0,0,0,0.3);
+    left:-15px;
+    z-index: 5;
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Saturn{
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    animation: orbitSaturn 60s linear infinite;
+}
+ul.Solar_System li.Saturn span{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        #FFF2CC 0%,
+        #E6D3A3 45%,
+        #C2B280 75%,
+        #8B7D3A 100%);
+    box-shadow:
+        inset -2px -2px 5px rgba(0,0,0,0.3);
+    left:-15px;
+    z-index: 4;
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Saturn span::before{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 18px;
+    top: 7px;
+    left: -14px;
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(210, 180, 140, 0.8) 40%,
+        rgba(160, 130, 90, 0.8) 60%,
+        rgba(120, 90, 60, 0.6) 100%);
+    box-shadow:
+        inset 0 0 6px rgba(0,0,0,0.4);
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+ul.Solar_System li.Uranus{
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    animation: orbitUranus 90s linear infinite;
+}
+ul.Solar_System li.Uranus span{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        #E0FFFF 0%,
+        #AFEEEE 45%,
+        #7FFFD4 75%,
+        #5F9EA0 100%);
+    box-shadow:
+        0 0 8px rgba(150,255,255,0.6);
+    left:-12px;
+    z-index: 3;
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Neptune{
+    width: 540px;
+    height: 540px;
+    border-radius: 50%;
+    animation: orbitNeptune 130s linear infinite;
+}
+ul.Solar_System li.Neptune span{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        #AFCBFF 0%,
+        #4169E1 45%,
+        #0000CD 75%,
+        #00008B 100%);
+    box-shadow:
+        0 0 10px rgba(80,100,255,0.6);
+    left:-13px;
+    z-index: 2;
+    transition: all 0.2s ease-in;
+}
+ul.Solar_System li.Pluto{
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    animation: orbitPluto 200s linear infinite;
+}
+ul.Solar_System li.Pluto span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #F5F5F5 0%,
+        #D6D6D6 45%,
+        #A9A9A9 75%,
+        #6B6B6B 100%);
+    box-shadow:
+        inset -1px -1px 3px rgba(0,0,0,0.4);
+    left:-5px;
+    z-index: 1;
+    transition: all 0.2s ease-in;
+}
+ul#Description{
+    list-style: none;
+}
+ul#Description h2{
+    position: relative;
+    opacity: 0.7;
+    right: 50%;
+    color: aqua;
+    font-size: 100%;
+}
+ul#Description h2:hover{
+    cursor: pointer;
+    opacity: 1;
+    color: red;
+}
+ul#Description li p{
+    position: absolute;
+    width: 350px;
+    display: block;
+    right:250px;
+    top: 100px;
+    padding: 25px;
+    font-size: 80%;
+    opacity: 0;
+    line-height: 1.3;
+    border:1.5px solid aqua;
+    box-shadow: 0.2px 0.2px 5px 1px aqua;
+    visibility: hidden;
+    text-align: justify;
+}
+ul#Description h2:hover + p{
+    visibility: visible;
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+@keyframes orbitMercury {
+    from { transform: translate(-50%,-50%) rotate(0deg); }
+    to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitVenus {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitEarth {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitMoon {
+    from { transform: rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+@keyframes orbitMars {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitJupiter {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitSaturn {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitUranus {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitNeptune {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes orbitPluto {
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
+}
